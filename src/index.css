@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #0f172a;
+    background-color: #f8fafc;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom background patterns and ambient glows for light theme */
+.bg-radial-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08) 0%, rgba(248, 250, 252, 0) 70%);
+}
+
+.bg-radial-subtle {
+  background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.06) 0%, rgba(248, 250, 252, 0) 70%);
+}
+
+.grid-matrix-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+}
+
+.dot-matrix-pattern {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Shiny CTA Button Animation */
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  50%, 100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+.animate-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmerSweep 3.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Pulsing Glow Ring */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4), 0 10px 25px -5px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(99, 102, 241, 0), 0 15px 30px -5px rgba(99, 102, 241, 0.45);
+  }
+}
+
+.cta-pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Data Flow animation for diagrams */
+@keyframes dataFlow {
+  0% {
+    stroke-dashoffset: 24;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-data-flow {
+  stroke-dasharray: 6 6;
+  animation: dataFlow 1.2s linear infinite;
+}
+
+

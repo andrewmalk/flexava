@@ -1,0 +1,8 @@
+{
+  "name": "Flexmerch.AI — AI Avatars & 24/7 AI Influencers",
+  "description": "Turnkey AI Influencer & Avatar Network for Brands. 60 unique videos/mo, real-device publishing, zero filming, and performance-driven growth on TikTok, Instagram, and YouTube.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
